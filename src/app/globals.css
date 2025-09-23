@@ -5,6 +5,10 @@
   --foreground: #171717;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -15,12 +19,38 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #fff;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--foreground);
+  color: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Add this to your globals.css */
+.vertical-grid-bg {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 46px,
+    rgba(0, 0, 0, 0.03) 50px,
+    rgba(0, 0, 0, 0.03) 50px
+  );
+}
+
+/* On mobile: tighter spacing so more lines fit */
+@media (max-width: 768px) {
+  .vertical-grid-bg {
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 26px, /* adjust spacing */
+      rgba(0, 0, 0, 0.03) 30px,
+      rgba(0, 0, 0, 0.03) 30px
+    );
+  }
+}
+
+

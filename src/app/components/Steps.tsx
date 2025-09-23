@@ -65,7 +65,7 @@ const Steps = () => {
                   </div>
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="text-[20px] font-medium text-[#272727] mb-1">
+                    <h3 className="text-[18px] font-medium text-[#272727] mb-1">
                       {step.title}
                     </h3>
                     <p className="text-[#252525CC] font-medium text-sm leading-relaxed">

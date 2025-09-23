@@ -55,7 +55,7 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqData }) => {
               onClick={() => toggleItem(index)}
               className="w-full px-6 py-4 text-left hover:bg-gray-750 transition-colors duration-200 flex items-center justify-between group"
             >
-              <span className={`text-[#2F3237] font-semibold text-[12px] md:text-[16px] sm:text-base pr-4 ${poppins.className}`}>
+              <span className={`text-[#2F3237] font-semibold text-[12px] md:text-[14px] pr-4 ${poppins.className}`}>
                 {item.question}
               </span>
               <div className="flex-shrink-0 ml-4 p-[6px] bg-[#004BF5D1] w-[32px] h-[32px] rounded-full">
@@ -96,13 +96,13 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqData }) => {
         className='bg-[#004BF5D1] rounded-[8px] p-[14px] flex items-center justify-between gap-4 mt-[2rem]'
       >
         <span className={`${poppins.className} flex-[2]`}>
-          <p className='font-medium text-[14px] md:text-[20px] leading-[140%]'>Still have questions?</p>
-          <p className='text-[12px] md:text-[14px] font-normal leading-[130%]'>
+          <p className='font-medium text-[14px] md:text-[18px] leading-[140%]'>Still have questions?</p>
+          <p className='text-[12px] md:text-[12px] font-normal leading-[130%]'>
             Reach out to our support team to help out!
           </p>
         </span>
 
-        <button className='w-[140px] bg-[#ffffff] px-6 py-2 rounded-[20px] text-[#004BF5D1] text-[14px] md:text-[16px] font-semibold leading-[100%] '>
+        <button className='w-[140px] bg-[#ffffff] px-6 py-2 rounded-[20px] text-[#004BF5D1] text-[14px] font-semibold leading-[100%] '>
           Send Email
         </button>
       </motion.div>

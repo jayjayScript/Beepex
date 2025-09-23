@@ -4,11 +4,13 @@ import React, { useState, useEffect } from 'react'
 import Logo from '../../public/image.png'
 import { Icon } from '@iconify/react'
 import { navItems } from './constant'
-import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
+  const [active, setActive] = useState<string>("");
+
+  
   // Toggle mobile menu
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -45,6 +47,34 @@ const Navbar = () => {
     }
   }, [isMobileMenuOpen])
 
+  const easeInOutQuad = (t: number) =>
+    t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+  const scrollTo = (targetY: number, duration = 600) => {
+    const startY = window.scrollY;
+    const distanceY = targetY - startY;
+    let startTime: number | null = null;
+    
+    const step = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const time = Math.min(1, (currentTime - startTime) / duration);
+      const easedTime = easeInOutQuad(time);
+      
+      window.scrollTo(0, startY + distanceY * easedTime);
+      
+      if (time < 1) requestAnimationFrame(step);
+    };
+    
+    requestAnimationFrame(step);
+  };
+  const handleScroll = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const offset = section.offsetTop - 80; // adjust for sticky navbar
+      scrollTo(offset, 700); // mimic react-scroll speed & easing
+      setActive(id);
+    }
+  };
   return (
     <>
       <nav className='bg-[#272727] py-3 pe-2 ps-5 md:px-[26px] m-4 my-[38px] rounded-[100px] flex justify-between items-center w-[90%]  md:max-w-[80%] mx-auto relative z-30'>
@@ -57,15 +87,12 @@ const Navbar = () => {
         <ul className='hidden md:flex items-center justify-center gap-8'>
           {navItems.map((item, index) => (
             <li key={index}>
-              <Link
-                to={item.id}
-                smooth={true}
-                duration={800} // control scroll speed
-                offset={-80}  // adjust for fixed navbar
+              <button
+                onClick={() => handleScroll(item.id)}
                 className="text-white text-[16px] font-normal cursor-pointer hover:text-gray-300 transition-colors duration-200"
               >
                 {item.name}
-              </Link>
+              </button>
             </li>
           ))}
         </ul>
@@ -111,15 +138,12 @@ const Navbar = () => {
           <ul className='flex flex-col gap-5 pt-8'>
             {navItems.map((item, index) => (
               <li key={index}>
-                <Link
-                  to={item.id}
-                  smooth={true}
-                  duration={800} // control scroll speed
-                  offset={-80}  // adjust for fixed navbar
+                <button
+                  onClick={() => {handleScroll(item.id); handleNavItemClick()}}
                   className="w-full text-center text-white text-[18px] font-normal px-6 py-4 hover:bg-gray-700 transition-colors duration-200 border-b border-gray-700 last:border-b-0"
                 >
                   {item.name}
-                </Link>
+                </button>
               </li>
             ))}
           </ul>

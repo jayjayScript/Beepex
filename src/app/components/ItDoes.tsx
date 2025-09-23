@@ -53,7 +53,7 @@ const ItDoes = () => {
                   <Icon icon={item.icon} height={24} width={24} className="text-[#004BF5D1]" />
                 </div>
                 <div className="my-3">
-                  <h3 className="text-[20px] font-medium text-[#272727] mb-1">{item.title}</h3>
+                  <h3 className="text-[16px] font-medium text-[#272727] mb-1">{item.title}</h3>
                   <p className="text-[#252525CC] font-medium text-sm leading-relaxed">{item.description}</p>
                 </div>
               </motion.div>
@@ -81,8 +81,8 @@ const ItDoes = () => {
                   <div className="flex items-center justify-center border-[0.88px] border-[#004BF5D1] bg-[#004BF514] w-[48px] h-[50px] rounded-[8px] mb-3">
                     <Icon icon={item.icon} height={28} width={28} className="text-[#004BF5D1]" />
                   </div>
-                  <h3 className="text-[24px] font-medium text-[#272727] mb-2">{item.title}</h3>
-                  <p className="text-[#252525CC] font-medium text-[16px] leading-relaxed max-w-xs ml-auto">
+                  <h3 className="text-[22px] font-medium text-[#272727] mb-2">{item.title}</h3>
+                  <p className="text-[#252525CC] font-medium text-[14px] leading-relaxed max-w-xs ml-auto">
                     {item.description}
                   </p>
                 </div>
@@ -119,8 +119,8 @@ const ItDoes = () => {
                   <div className="flex items-center justify-center border-[0.88px] border-[#004BF5D1] bg-[#004BF514] w-[48px] h-[50px] rounded-[8px] mb-3">
                     <Icon icon={item.icon} height={28} width={28} className="text-[#004BF5D1]" />
                   </div>
-                  <h3 className="text-[24px] font-medium text-[#272727] mb-2">{item.title}</h3>
-                  <p className="text-[#252525CC] font-medium text-[16px] leading-relaxed max-w-xs">
+                  <h3 className="text-[22px] font-medium text-[#272727] mb-2">{item.title}</h3>
+                  <p className="text-[#252525CC] font-medium text-[14px] leading-relaxed max-w-xs">
                     {item.description}
                   </p>
                 </div>

@@ -86,7 +86,7 @@ const Footer = () => {
                     <p className="text-xs sm:text-sm md:text-base font-medium leading-tight">
                       {item.text}
                     </p>
-                    <p className="text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-tight">
+                    <p className="text-sm md:text-lg font-medium leading-tight">
                       {item.store}
                     </p>
                   </span>

@@ -79,7 +79,7 @@ const Testimonials: React.FC<{ count?: number }> = ({ count = 5 }) => {
                                 </div>
                             </div>
 
-                            <p className={`text-[#0F1125] font-medium text-[18px] leading-[190%] text-left w-[266px] md:w-[90%] ${manrope.className} my-[32px]`}>
+                            <p className={`text-[#0F1125] font-medium text-[16px] leading-[190%] text-left w-[266px] md:w-[90%] ${manrope.className} my-[32px]`}>
                                 {items.testimony}
                             </p>
 
@@ -87,7 +87,7 @@ const Testimonials: React.FC<{ count?: number }> = ({ count = 5 }) => {
 
                             <div className='flex items-center gap-4 mt-[24px]'>
                                 <Image src={items.image} height={72} width={72} alt="profile image" />
-                                <p className='text-[#0F1125] font-semibold text-[20px] leading-[100%]'>{items.name}</p>
+                                <p className='text-[#0F1125] font-semibold text-[18px] leading-[100%]'>{items.name}</p>
                             </div>
                         </motion.div>
                     ))}

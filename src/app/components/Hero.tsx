@@ -23,7 +23,7 @@ const Hero = () => {
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}
       >
-        <h1 className='font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-[#272727] leading-tight text-center px-2'>
+        <h1 className='font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-[46px] text-[#272727] leading-tight text-center px-2'>
           All Your Payments, One Smart App.
         </h1>
       </motion.header>
@@ -37,7 +37,7 @@ const Hero = () => {
         transition={{ delay: 0.2, duration: 0.6 }}
         viewport={{ once: false, amount: 0.2 }}
       >
-        <p className='font-normal text-sm sm:text-base md:text-lg lg:text-xl text-[#252525CC] leading-relaxed text-center px-4'>
+        <p className='font-normal text-sm sm:text-base md:text-[16px] lg:text-[18px] text-[#252525CC] leading-relaxed text-center px-4'>
           Redeem gift cards for cash, pay electricity and cable bills, buy
           airtime and data, fast, secure, and built for how you actually live.
         </p>
@@ -62,8 +62,8 @@ const Hero = () => {
               className="text-white flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7"
             />
             <span className="ml-2 sm:ml-3 text-white text-left flex-1">
-              <p className="text-xs sm:text-sm md:text-base font-medium leading-tight">{item.text}</p>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-medium leading-tight">{item.store}</p>
+              <p className="text-xs sm:text-sm md:text-[14px] font-medium leading-tight">{item.text}</p>
+              <p className="text-sm sm:text-base md:text-lg lg:text-[18px] font-medium leading-tight">{item.store}</p>
             </span>
           </motion.button>
         ))}

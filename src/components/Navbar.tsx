@@ -106,7 +106,7 @@ const Navbar = () => {
             icon={isMobileMenuOpen ? "mdi:close" : "clarity:menu-line"}
             width="24"
             height="24"
-            className='md:hidden transition-transform duration-200'
+            className='md:hidden transition-transform duration-200 text-[#2F3237]'
           />
           <p className='hidden md:block font-normal text-[16px] text-black'>Download</p>
         </button>

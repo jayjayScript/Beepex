@@ -7,7 +7,6 @@ import Image from "next/image";
 import logo from "../../public/footer-img.png";
 import { motion } from "framer-motion";
 import { scrollToSection } from "@/utils/ScrollToSection";
-import ScrollToTop from '@/components/ScrollToTop';
 
 
 const socials = [
@@ -21,14 +20,14 @@ const Footer = () => {
   return (
     <>
       <section className="bg-[#F5F7F8] mt-[18rem] p-4">
-        <div className="relative md:w-[90%] max-w-[1300px] mx-auto p-4">
+        <div className="relative md:max-w-[90%] mx-auto p-4">
           {/* Card Banner */}
           <motion.div
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="absolute top-[-220px] left-1/2 transform -translate-x-1/2 p-4 py-[5rem] my-6 rounded-4xl bg-[#272727] md:h-[420px]"
+            className="absolute left-0 top-[-220px] p-4 py-[5rem] my-6 rounded-4xl bg-[#272727] md:h-[420px]"
             style={{
               backgroundImage: `url(${cardBg.src})`,
               backgroundSize: "cover",
@@ -36,7 +35,6 @@ const Footer = () => {
               backgroundRepeat: "no-repeat",
             }}
           >
-          
             <header className="px-3 md:max-w-[70%] mx-auto ">
               <motion.h2
                 initial={{ opacity: 0, y: 40 }}
@@ -73,7 +71,7 @@ const Footer = () => {
               {downloadAppButtons.map((item, index) => (
                 <button
                   key={index}
-                  className="flex items-center bg-[#000A03] rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 w-full xs:w-auto min-w-[140px] sm:min-w-[160px] md:min-w-[180px] lg:w-[204px] h-12 sm:h-14 md:h-16 lg:h-[55px] border border-[#999999] hover:bg-[#1a1a1a] transition-colors duration-200 cursor-pointer"
+                  className="flex items-center bg-[#000A03] rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 w-full xs:w-auto min-w-[140px] sm:min-w-[160px] md:min-w-[180px] lg:min-w-[194px] h-12 sm:h-14 md:h-16 lg:h-[55px] border border-[#999999] hover:bg-[#1a1a1a] transition-colors duration-200 cursor-pointer"
                 >
                   <Icon
                     icon={item.icon}
@@ -105,12 +103,11 @@ const Footer = () => {
               >
                 {/* Logo */}
                 <div className="md:col-span-2">
-                  <div
+                  <div className="flex items-center justify-center md:justify-start space-x-2 mb-4"
                     onClick={() => {
-                      window.location.reload();
                       window.scrollTo({ top: 0, behavior: "smooth" });
+                      setTimeout(() => window.location.reload(), 300);
                     }}
-                    className="flex items-center justify-center md:justify-start space-x-2 mb-4 cursor-pointer"
                   >
                     <Image
                       src={logo}
@@ -120,8 +117,6 @@ const Footer = () => {
                     />
                   </div>
                 </div>
-
-
 
                 {/* Company Links */}
                 <div>
@@ -134,13 +129,10 @@ const Footer = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.4, delay: index * 0.15 }}
                         viewport={{ once: true }}
+                        className="cursor-pointer flex items-center justify-center md:justify-start space-x-2 mb-4"
+                        onClick={() => scrollToSection(link.id, 80, 700)}
                       >
-                        <p
-                          onClick={() => scrollToSection(link.id, 80, 700)}
-                          className="hover:text-[#004BF5] transition-colors cursor-pointer"
-                        >
-                          {link.name}
-                        </p>
+                        {link.id}
                       </motion.li>
                     ))}
                   </ul>
@@ -186,7 +178,7 @@ const Footer = () => {
                   <h3 className="font-semibold mb-2 text-[#171717]">
                     Location
                   </h3>
-                  <p className="text-gray-600 text-[12px]">Lagos, Nigeria</p>
+                  <p className="text-gray-600">Lagos, Nigeria</p>
                 </div>
               </motion.div>
 
@@ -203,8 +195,8 @@ const Footer = () => {
               </motion.div>
             </div>
           </footer>
-        </div>
-      </section>
+        </div >
+      </section >
     </>
   );
 };

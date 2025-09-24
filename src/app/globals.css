@@ -47,4 +47,11 @@ body {
   }
 }
 
+.flex {
+    scroll-snap-type: x mandatory;
+}
+.flex > * {
+    scroll-snap-align: center;
+}
+
 

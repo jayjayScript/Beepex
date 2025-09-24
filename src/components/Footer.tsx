@@ -2,17 +2,13 @@
 import React from "react";
 import cardBg from "../assets/img/image.png";
 import { Icon } from "@iconify/react";
-import { downloadAppButtons } from "./constant";
+import { downloadAppButtons, navItems } from "./constant";
 import Image from "next/image";
 import logo from "../../public/footer-img.png";
 import { motion } from "framer-motion";
+import { scrollToSection } from "@/utils/ScrollToSection";
+import ScrollToTop from '@/components/ScrollToTop';
 
-const companyLinks = [
-  { name: "How It Works", href: "#how-it-works" },
-  { name: "Features", href: "#features" },
-  { name: "FAQs", href: "#faqs" },
-  { name: "Testimonials", href: "#testimonials" },
-];
 
 const socials = [
   { icon: "ri:facebook-fill", href: "https://facebook.com" },
@@ -25,14 +21,14 @@ const Footer = () => {
   return (
     <>
       <section className="bg-[#F5F7F8] mt-[18rem] p-4">
-        <div className="relative md:max-w-[90%] mx-auto p-4">
+        <div className="relative md:w-[90%] max-w-[1300px] mx-auto p-4">
           {/* Card Banner */}
           <motion.div
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="absolute left-0 top-[-220px] p-4 py-[5rem] my-6 rounded-4xl bg-[#272727] md:h-[420px]"
+            className="absolute top-[-220px] left-1/2 transform -translate-x-1/2 p-4 py-[5rem] my-6 rounded-4xl bg-[#272727] md:h-[420px]"
             style={{
               backgroundImage: `url(${cardBg.src})`,
               backgroundSize: "cover",
@@ -40,13 +36,14 @@ const Footer = () => {
               backgroundRepeat: "no-repeat",
             }}
           >
+          
             <header className="px-3 md:max-w-[70%] mx-auto ">
               <motion.h2
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center leading-[125%] text-[#fff]"
+                className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-[40px] text-center leading-[125%] text-[#fff]"
               >
                 Download Our App for Free and get 5% cashback on your first
                 transaction
@@ -76,7 +73,7 @@ const Footer = () => {
               {downloadAppButtons.map((item, index) => (
                 <button
                   key={index}
-                  className="flex items-center bg-[#000A03] rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 w-full xs:w-auto min-w-[140px] sm:min-w-[160px] md:min-w-[180px] lg:min-w-[194px] h-12 sm:h-14 md:h-16 lg:h-[55px] border border-[#999999] hover:bg-[#1a1a1a] transition-colors duration-200 cursor-pointer"
+                  className="flex items-center bg-[#000A03] rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 w-full xs:w-auto min-w-[140px] sm:min-w-[160px] md:min-w-[180px] lg:w-[204px] h-12 sm:h-14 md:h-16 lg:h-[55px] border border-[#999999] hover:bg-[#1a1a1a] transition-colors duration-200 cursor-pointer"
                 >
                   <Icon
                     icon={item.icon}
@@ -108,7 +105,13 @@ const Footer = () => {
               >
                 {/* Logo */}
                 <div className="md:col-span-2">
-                  <div className="flex items-center justify-center md:justify-start space-x-2 mb-4">
+                  <div
+                    onClick={() => {
+                      window.location.reload();
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    className="flex items-center justify-center md:justify-start space-x-2 mb-4 cursor-pointer"
+                  >
                     <Image
                       src={logo}
                       alt="Beepex Logo"
@@ -118,11 +121,13 @@ const Footer = () => {
                   </div>
                 </div>
 
+
+
                 {/* Company Links */}
                 <div>
                   <h3 className="font-semibold mb-3 text-[#171717]">Company</h3>
                   <ul className="space-y-2 text-gray-600">
-                    {companyLinks.map((link, index) => (
+                    {navItems.map((link, index) => (
                       <motion.li
                         key={index}
                         initial={{ opacity: 0, x: -20 }}
@@ -130,12 +135,12 @@ const Footer = () => {
                         transition={{ duration: 0.4, delay: index * 0.15 }}
                         viewport={{ once: true }}
                       >
-                        <a
-                          href={link.href}
-                          className="hover:text-[#004BF5] transition-colors"
+                        <p
+                          onClick={() => scrollToSection(link.id, 80, 700)}
+                          className="hover:text-[#004BF5] transition-colors cursor-pointer"
                         >
                           {link.name}
-                        </a>
+                        </p>
                       </motion.li>
                     ))}
                   </ul>
@@ -181,7 +186,7 @@ const Footer = () => {
                   <h3 className="font-semibold mb-2 text-[#171717]">
                     Location
                   </h3>
-                  <p className="text-gray-600">Lagos, Nigeria</p>
+                  <p className="text-gray-600 text-[12px]">Lagos, Nigeria</p>
                 </div>
               </motion.div>
 

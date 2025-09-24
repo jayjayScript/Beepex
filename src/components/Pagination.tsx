@@ -55,13 +55,13 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
       {visiblePages.map((page, index) => (
         <React.Fragment key={index}>
           {page === '...' ? (
-            <span className="flex items-center justify-center w-10 h-10 text-gray-500">
+            <span className="flex items-center justify-center w-6 h-6 text-gray-500 text-[16px]">
               ...
             </span>
           ) : (
             <button
               onClick={() => onPageChange(page as number)}
-              className={`flex items-center justify-center w-10 h-10 rounded-lg font-medium transition-colors duration-200 ${
+              className={`flex items-center text-[12px] justify-center w-6 h-6 rounded-lg font-medium transition-colors duration-200 ${
                 currentPage === page
                   ? 'bg-blue-500 text-white shadow-sm'
                   : 'bg-white border border-gray-300 text-gray-700 hover:bg-gray-50'

@@ -1,7 +1,7 @@
 "use client"
 import { testimonials } from '@/components/constant'
 import ResponsiveHeader from '@/components/ResponsiveHeader'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Icon } from '@iconify/react'
 import { Manrope } from 'next/font/google';
 import Image from 'next/image';
@@ -25,9 +25,20 @@ const cardVariants = {
 
 const Testimonials: React.FC<{ count?: number }> = ({ count = 5 }) => {
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 4;
-    const totalPages = Math.ceil(testimonials.length / itemsPerPage);
+    const [itemsPerPage, setItemsPerPage] = useState(4);
 
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 1024) setItemsPerPage(3);
+            else if (window.innerWidth >= 768) setItemsPerPage(2);
+            else setItemsPerPage(1);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const totalPages = Math.ceil(testimonials.length / itemsPerPage);
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const currentTestimonials = testimonials.slice(startIndex, endIndex);
@@ -37,7 +48,7 @@ const Testimonials: React.FC<{ count?: number }> = ({ count = 5 }) => {
     };
 
     return (
-        <section className='bg-[#F5F7F8] py-12 px-4'>
+        <section className='bg-[#F5F7F8] pt-2 pb-8 px-4'>
             <div className='md:max-w-[90%] mx-auto'>
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -51,12 +62,11 @@ const Testimonials: React.FC<{ count?: number }> = ({ count = 5 }) => {
                     />
                 </motion.div>
 
-                {/* Testimonials Grid */}
-                <div className='flex flex-col md:grid grid-cols-2 md:gap-[34px] gap-4 my-[54px]'>
+                <div className={`grid gap-4 my-[40px] transition duration-500 ease-in-out ${itemsPerPage === 3 ? "grid-cols-3" : itemsPerPage === 2 ? "grid-cols-2" : "grid-cols-1"}`}>
                     {currentTestimonials.map((items, index) => (
                         <motion.div
                             key={index}
-                            className='bg-[#FFFFFF] p-6 rounded-3xl'
+                            className='bg-[#FFFFFF] p-6 rounded-3xl transition duration-500 ease-in-out'
                             custom={index}
                             initial="hidden"
                             whileInView="visible"
@@ -65,7 +75,6 @@ const Testimonials: React.FC<{ count?: number }> = ({ count = 5 }) => {
                         >
                             <div className='flex justify-between items-center'>
                                 <Icon icon="fontisto:quote-a-right" width="50" height="36" className='text-[#135CE733]' />
-
                                 <div className='flex items-center'>
                                     {Array.from({ length: count }, (_, i) => (
                                         <Icon
@@ -79,11 +88,11 @@ const Testimonials: React.FC<{ count?: number }> = ({ count = 5 }) => {
                                 </div>
                             </div>
 
-                            <p className={`text-[#0F1125] font-medium text-[16px] leading-[190%] text-left w-[266px] md:w-[90%] ${manrope.className} my-[32px]`}>
+                            <p className={`text-[#0F1125] font-medium text-[16px] leading-[190%] text-left ${manrope.className} my-[32px]`}>
                                 {items.testimony}
                             </p>
 
-                            <div className='border-[#E9EFF5] w-[356px] border-[1px]'></div>
+                            <div className='border-[#E9EFF5] w-full border-[1px]'></div>
 
                             <div className='flex items-center gap-4 mt-[24px]'>
                                 <Image src={items.image} height={72} width={72} alt="profile image" />
@@ -93,7 +102,6 @@ const Testimonials: React.FC<{ count?: number }> = ({ count = 5 }) => {
                     ))}
                 </div>
 
-                {/* Pagination */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -111,4 +119,4 @@ const Testimonials: React.FC<{ count?: number }> = ({ count = 5 }) => {
     )
 }
 
-export default Testimonials
+export default Testimonials;

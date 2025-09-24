@@ -136,25 +136,5 @@ export const testimonials = [
         testimony: "I like that everything is in one place. The interface makes sense, and I don’t have to think too hard to find what I need.",
         name: "Tolu D.",
         image: (tolu)
-    },
-    {
-        testimony: "I sold my Amazon gift card in under 10 minutes and got the cash straight to my wallet. No stress, no stories.",
-        name: "Daniel A.",
-        image: (daniel)
-    },
-    {
-        testimony: "The app is clean and easy to use. I’ve been topping up my data and airtime without switching between apps.",
-        name: "Fola O.",
-        image: (fola)
-    },
-    {
-        testimony: "I like that everything is in one place. The interface makes sense, and I don’t have to think too hard to find what I need.",
-        name: "Tolu D.",
-        image: (tolu)
-    },
-    {
-        testimony: "Paying my NEPA bill used to be a whole chore,  with Beepex, it’s literally two taps and done.",
-        name: "Chidera M.",
-        image: (chidera)
     }
 ]

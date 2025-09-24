@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Poppins } from 'next/font/google';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -39,7 +40,7 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqData }) => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto my-14 text-white ">
+    <div className="w-full max-w-4xl mx-auto my-12 text-white ">
       <div className="flex flex-col gap-3">
         {faqData.map((item: FAQItem, index: number) => (
           <motion.div
@@ -102,9 +103,12 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ faqData }) => {
           </p>
         </span>
 
-        <button className='w-[140px] bg-[#ffffff] px-6 py-2 rounded-[20px] text-[#004BF5D1] text-[14px] font-semibold leading-[100%] '>
-          Send Email
-        </button>
+        <Link href="mailto:supportbeepex@gmail.com">
+          <button className='w-[140px] bg-[#ffffff] px-6 py-2 rounded-[20px] text-[#004BF5D1] text-[14px] font-semibold leading-[100%] '>
+            Send Email
+          </button>
+        </Link>
+
       </motion.div>
     </div>
   );

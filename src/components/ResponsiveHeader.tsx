@@ -45,7 +45,7 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
       <h2 
         className={`
           font-semibold 
-          text-2xl sm:text-[28px] md:text-[34px] lg:text-[46px] 
+          text-2xl sm:text-[28px] md:text-[34px] lg:text-[40px] 
           text-center 
           leading-[125%] 
           ${spacingClass}
@@ -59,7 +59,7 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({
       {description && (
         <p 
           className={`
-            text-sm md:text-[18px] 
+            text-sm md:text-[16px] 
             text-center 
             font-normal 
             leading-[125%] 

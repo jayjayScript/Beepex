@@ -20,7 +20,7 @@ const staggerContainer = {
 const Steps = () => {
   return (
     <motion.section
-      className="p-4 lg:max-w-[95%] mx-auto"
+      className="p-4 md:max-w-[90%] max-w-[1400px] mx-auto"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.2 }}
@@ -35,7 +35,7 @@ const Steps = () => {
       </motion.div>
 
       <div className="w-full mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row-reverse items-center lg:items-end justify-between gap-8 lg:gap-12 xl:gap-16 mt-12 md:mt-16 lg:mt-34">
+        <div className="flex flex-col lg:flex-row-reverse items-center lg:items-end justify-between gap-8 lg:gap-12 xl:gap-16 mt-12 md:mt-14 lg:mt-16">
           {/* Steps Content */}
           <motion.div className="w-full" variants={fadeInUp}>
             <h3 className="font-semibold text-[20px] text-[#272727] leading-[125%] my-4 mb-6">
@@ -85,8 +85,8 @@ const Steps = () => {
             transition={{ duration: 0.7, ease: "easeOut" as const }}
             viewport={{ once: false }}
           >
-            <div className="bg-[#F5F7F8] rounded-2xl relative w-full h-[332px] md:h-[584px]">
-              <div className="absolute bottom-6 md:-bottom-[6%] w-full">
+            <div className="bg-[#F5F7F8] rounded-2xl relative w-[100%] md:w-[90%] h-[332px] md:h-[584px]">
+              <div className="absolute bottom-6 md:-bottom-[6%] w-[350px] md:w-[640px]">
                 <Image src={howPhone} alt="how it works" className="w-full scale-110 sm:scale-92" />
               </div>
             </div>

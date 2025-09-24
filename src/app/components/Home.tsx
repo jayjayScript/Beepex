@@ -9,7 +9,7 @@ import Testimonials from "./Testimonials";
 
 const Home = () => {
   return (
-    <div className="w-full">
+    <div className="w-full overflow-x-hidden">
       <section id="home">
         <Hero />
       </section>

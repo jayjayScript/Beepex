@@ -14,7 +14,7 @@ const fadeInUp = {
 
 const Hero = () => {
   return (
-    <section className='bg-[#F5F7F8] mx-4 sm:mx-4 lg:mx-auto pt-4 sm:pt-6 md:pt-8 lg:pt-12 px-4 sm:px-6 md:px-8 lg:px-12 rounded-lg md:rounded-2xl lg:rounded-3xl vertical-grid-bg max-w-7xl lg:max-w-[90%]'>
+    <section className='bg-[#F5F7F8] mx-4 sm:mx-4 lg:mx-auto pt-4 sm:pt-6 md:pt-8 lg:pt-12 px-4 sm:px-6 md:px-8 lg:px-12 rounded-lg md:rounded-2xl lg:rounded-3xl vertical-grid-bg md:max-w-[90%]'>
       {/* Header */}
       <motion.header
         className='w-full max-w-3xl mx-auto'
@@ -23,7 +23,7 @@ const Hero = () => {
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}
       >
-        <h1 className='font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-[46px] text-[#272727] leading-tight text-center px-2'>
+        <h1 className='font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-[40px] text-[#272727] leading-tight text-center px-2'>
           All Your Payments, One Smart App.
         </h1>
       </motion.header>
@@ -37,7 +37,7 @@ const Hero = () => {
         transition={{ delay: 0.2, duration: 0.6 }}
         viewport={{ once: false, amount: 0.2 }}
       >
-        <p className='font-normal text-sm sm:text-base md:text-[16px] lg:text-[18px] text-[#252525CC] leading-relaxed text-center px-4'>
+        <p className='font-normal text-sm sm:text-base md:text-[16px] text-[#252525CC] leading-relaxed text-center px-4'>
           Redeem gift cards for cash, pay electricity and cable bills, buy
           airtime and data, fast, secure, and built for how you actually live.
         </p>
@@ -55,7 +55,7 @@ const Hero = () => {
             key={index}
             variants={fadeInUp}
             transition={{ delay: 0.3 + index * 0.15, duration: 0.5 }}
-            className="flex items-center bg-[#000A03] rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 w-full xs:w-auto min-w-[140px] sm:min-w-[160px] md:min-w-[180px] lg:min-w-[194px] h-12 sm:h-14 md:h-16 lg:h-[55px] border border-[#999999] hover:bg-[#1a1a1a] transition-colors duration-200 cursor-pointer"
+            className="flex items-center bg-[#000A03] rounded-md md:rounded-lg p-2 sm:p-3 md:p-4 w-full xs:w-auto min-w-[140px] sm:min-w-[160px] md:min-w-[180px] lg:w-[204px] h-12 sm:h-14 md:h-16 lg:h-[55px] border border-[#999999] hover:bg-[#1a1a1a] transition-colors duration-200 cursor-pointer"
           >
             <Icon
               icon={item.icon}

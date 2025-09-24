@@ -24,20 +24,20 @@ const ItDoes = () => {
 
   return (
     <motion.section
-      className="bg-[#F5F7F8] py-2 mt-20"
+      className="bg-[#F5F7F8] py-2 mt-16"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.2 }}
       variants={staggerContainer}
     >
-      <motion.div variants={fadeInUp}>
+      <motion.div variants={fadeInUp} className="px-6">
         <ResponsiveHeader
           title="More Than Just Payments — Beepex Does It All"
           description="One app for all your day-to-day money moves: pay bills, redeem cards, buy airtime, and stay in control, with security built in."
         />
       </motion.div>
 
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
+      <div className="w-full md:w-[90%] mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-10">
         {/* Mobile Layout */}
         <div className="block lg:hidden">
           <motion.div

@@ -85,7 +85,7 @@ const Steps = () => {
             transition={{ duration: 0.7, ease: "easeOut" as const }}
             viewport={{ once: false }}
           >
-            <div className="bg-[#F5F7F8] rounded-2xl relative w-[100%] md:w-[90%] h-[332px] md:h-[584px]">
+            <div className="bg-[#F5F7F8] rounded-2xl relative w-[100%] md:w-[100%] h-[332px] md:h-[584px]">
               <div className="absolute bottom-6 md:-bottom-[6%] w-[350px] md:w-[640px]">
                 <Image src={howPhone} alt="how it works" className="w-full scale-110 sm:scale-92" />
               </div>

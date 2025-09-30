@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import cardBg from "../assets/img/image.png";
+import cardBg from "../assets/img/bg-image.png";
 import { Icon } from "@iconify/react";
 import { downloadAppButtons, navItems } from "./constant";
 import Image from "next/image";

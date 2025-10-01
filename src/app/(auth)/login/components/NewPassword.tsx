@@ -60,7 +60,7 @@ const NewPassword: React.FC<EnterNewPasswordProps> = ({ setView }) => {
     <div className="">
       <form className="w-full space-y-2" onSubmit={handleSubmit}>
         {/* New Password Field */}
-        <div className="relative">
+        <div className="relative w-[340px] md:w-[500px]">
           <label
             htmlFor="password"
             className="block text-[12px] sm:text-[14px] font-semibold mb-1"
@@ -79,7 +79,7 @@ const NewPassword: React.FC<EnterNewPasswordProps> = ({ setView }) => {
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-[60%] -translate-y-1/2 text-gray-400 hover:text-gray-600"
+            className="absolute right-3 top-[65%] -translate-y-1/2 text-gray-400 hover:text-gray-600"
           >
             {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
           </button>
@@ -104,7 +104,7 @@ const NewPassword: React.FC<EnterNewPasswordProps> = ({ setView }) => {
           <button
             type="button"
             onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            className="absolute right-3 top-[60%] -translate-y-1/2 text-gray-400 hover:text-gray-600"
+            className="absolute right-3 top-[65%] -translate-y-1/2 text-gray-400 hover:text-gray-600"
           >
             {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
           </button>

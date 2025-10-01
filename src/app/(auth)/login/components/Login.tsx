@@ -83,7 +83,7 @@ const Login: React.FC<LoginProps> = ({ setView }) => {
                     <button
                         type='button'
                         onClick={() => setShowPassword(!showPassword)}
-                        className='absolute right-3 top-[55%] text-gray-400 hover:text-gray-600 cursor-pointer'
+                        className='absolute right-3 top-[44%] text-gray-400 hover:text-gray-600 cursor-pointer'
                     >
                         <svg className='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
                             {showPassword ? (
@@ -114,11 +114,11 @@ const Login: React.FC<LoginProps> = ({ setView }) => {
                                 style={{ transitionDelay: `${index * 100}ms` }}
                             >
                                 {
-                                    checks && <div className={`w-4 h-4 rounded-full flex items-center justify-center ${checks[index] ? 'bg-green-500' : 'bg-red-500'
+                                    checks && <div className={`w-2 h-2 rounded-full flex items-center justify-center ${checks[index] ? 'bg-green-500' : 'bg-red-500'
                                         }`}>
                                     </div>
                                 }
-                                <span className={`text-sm text-gray-500`}>
+                                <span className={`text-[12px] text-gray-500`}>
                                     {rule.label}
                                 </span>
                             </div>

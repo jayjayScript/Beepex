@@ -37,7 +37,7 @@ const Auth = () => {
     <section className="relative min-h-screen flex items-center justify-center px-2 sm:px-4 lg:px-0">
       <Image src={cardBg} alt="Background" fill className="object-cover" priority />
 
-      <div className="bg-[#FFF] px-4 pt-[30px] md:pb-[180px] md:pt-[70px] md:px-[90px] border-t-[1px] border-[#EAECF0] rounded-[24px] mx-2 sm:mx-4 w-full max-w-[720px] h-auto md:h-[665px] z-50 flex items-center justify-center">
+      <div className="bg-[#FFF] px-4 pt-[30px] md:pb-30 md:pt-[90px] md:px-[90px] border-t-[1px] border-[#EAECF0] rounded-[24px] mx-2 sm:mx-4 w-full max-w-[720px] h-auto md:h-[665px] z-50 flex items-center justify-center">
         {/* Header */}
         <AnimatePresence mode="wait">
           <div>
